@@ -30,6 +30,9 @@ var passwordLength =window.prompt("please t")
 generateBtn.addEventListener("click", function(){
 
 // When we click generate password. we ask the user how long we want the password to be.
-var length = window.prompt("how many characters would you like your password to be?");
-var uppercase = window.confirm()
+var passwordLength = window.prompt("how many characters would you like your password to be?")
+var upperCase = window.confirm("Ckick OK to confirm uppercase characters")
+var lowerCase = window.confirm("Ckick OK to confirm lowercase characters")
+var specialCharacters = window.confirm("Ckick OK to confirm special characters")
+var numberic = window.confirm("Ckick OK to confirm numeric characters")
 });
