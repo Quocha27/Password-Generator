@@ -1,6 +1,7 @@
 // Assignment Code
-const specialCharacters = "!@#$%^&*()";
+const specialCharactersArr = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
 const generateBtn = document.querySelector("#generate");
+const emptyArr = [];
 generateBtn.addEventListener('click', writePassword)
 
 
@@ -13,39 +14,55 @@ function writePassword() {
 }
 
 
-
-// Add event listener to generate button
+// Add event listener to generate button and Prompts
 function generatePassword() {
-
-
-// Prompts
 var passwordLength = window.prompt("how many characters would you like your password to be?");
 var upperCase = window.confirm("Ckick OK to confirm uppercase characters");
 var lowerCase = window.confirm("Ckick OK to confirm lowercase characters");
 var specialCharacters = window.confirm("Ckick OK to confirm special characters");
 var numberic = window.confirm("Ckick OK to confirm numeric characters");
 
-if (passwordLength===true) {
-  return String.fromCharCode(Math.floor(Math.random()*26)+65);
-}
+
+if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+  console.log("Conditions are not met");
+ }
+
 if (upperCase===true) {
-  return String.fromCharCode(Math.floor(Math.random()*26)+65);
-}
+  for (let i = 0; i < passwordLength; i++) {
+emptyArr.push (String.fromCharCode(Math.floor(Math.random()*26)+65)); 
+  }
+ }
+
 if (lowerCase===true) {
-  return String.fromCharCode(Math.floor(Math.random()*26)+97);
+  for (let i = 0; i < passwordLength; i++) {
+emptyArr.push (String.fromCharCode(Math.floor(Math.random()*26)+97));
+ }
 }
+
 if (specialCharacters===true) {
-  return specialCharacters[Math.floor(Math.random()*symbols.length)];
+  emptyArr.push(...specialCharactersArr)
 }
+
 if (numberic===true) {
-  return Math.floor(Math.random() *10);
+  for (let i = 0; i < passwordLength; i++) {
+emptyArr.push (String.fromCharCode(Math.floor(Math.random()*10) +48));
 }
-};
+}
 
-var randomPasswordGenerated ="";
+// empty string var for the loop below
+var randomPasswordGenerated = "";
 
-for (var i = 0; i < 100; i++ ) {
-var randomPasswordGenerated = Math.floor(Math.random() * 4);
-randomPasswordGenerated += ran
+//loop for numeric
+for (let i = 0; i < passwordLength; i++) {
+var randomNumberPicked = Math.floor(Math.random() * 4);
 
-return randomPasswordGenerated;}
+ randomPasswordGenerated += randomNumberPicked;
+}
+
+randomPasswordGenerated += passwordLength;
+randomPasswordGenerated += upperCase;
+randomPasswordGenerated += lowerCase;
+randomPasswordGenerated += specialCharacters;
+
+return randomPasswordGenerated;
+}
