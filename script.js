@@ -60,10 +60,10 @@ var randomNumberPicked = Math.floor(Math.random() * 4);
  randomPasswordGenerated += randomNumberPicked;
 }
 
-randomPasswordGenerated || randomNumberPicked;
-randomPasswordGenerated || upperCase;
-randomPasswordGenerated || lowerCase;
-randomPasswordGenerated || numberic;
+randomPasswordGenerated += passwordLength;
+randomPasswordGenerated += upperCase;
+randomPasswordGenerated += lowerCase;
+randomPasswordGenerated += specialCharacters;
 
 return randomPasswordGenerated;
 }
