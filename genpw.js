@@ -16,8 +16,6 @@ function writePassword() {
 }
 
 function generatePassword() {
-  console.log("im working")
-
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", function () {
@@ -92,4 +90,4 @@ generateBtn.addEventListener("click", function () {
 var generatePassword = function () {
 
 }
-// When we click generate password. we ask the user how long we want the password to be.
+
