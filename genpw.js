@@ -87,7 +87,5 @@ generateBtn.addEventListener("click", function () {
 
 });
 
-var generatePassword = function () {
 
-}
 
